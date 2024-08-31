@@ -3,14 +3,14 @@ const mongoose = require('mongoose');
 const MAstersRouter = require('./routes//Masters.route.js');
 const TatooRouter = require('./routes/Tatoos.route.js');
 const StyleRouter = require('./routes/Styles.route.js');
-
+const port = process.env.PORT || 4000;
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use('/api/tatoos', TatooRouter);
 app.use('/api/styles', StyleRouter);
 app.use('/api/masters', MAstersRouter);
-// app.post('/api/styles', async (req, res) => {
+
 //     try {
 //         const style = await Style.create(req.body);
 //         res.status(200).json(style);
@@ -80,7 +80,7 @@ mongoose
     )
     .then(() => {
         console.log('Connected!'),
-            app.listen(3000, () => console.log('server Is listening'));
+            app.listen(port, () => console.log('server Is listening'));
     })
     .catch((err) => {
         console.log('connection is failed');
