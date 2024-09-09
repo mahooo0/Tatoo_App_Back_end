@@ -5,23 +5,11 @@ const {
     GetAllMasters,
     UpdateMaster,
     DEleteMasters,
-    AddMasterImg,
 } = require('../controllers/masters');
 const Master = require('../models/Masters.module');
 const Tatoo = require('../models/Tatoo.module');
 
-router.post('/', AddMasterImg);
-// router.post(
-//     '/',
-//     (req, res, next) => {
-//         console.log(req.body, '1');
-//         next();
-//     },
-//     (req, res) => {
-//         console.log(req.body, '2');
-//         res.json({ ssss: 'sss' });
-//     }
-// );
+router.post('/', CreateMaster);
 router.get('/', GetAllMasters);
 router.put('/:id', UpdateMaster);
 router.delete('/:id', DEleteMasters);

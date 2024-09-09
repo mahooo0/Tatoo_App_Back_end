@@ -58,25 +58,25 @@ function checkFileType(file, cb) {
 
 // POST route for uploading an image
 
-app.post('/api/upload', (req, res) => {
-    upload(req, res, (err) => {
-        if (err) {
-            res.status(500).json({ message: err });
-        } else {
-            if (req.file == undefined) {
-                res.status(400).json({ message: 'No file selected!' });
-            } else {
-                // let body = JSON.parse(req.body.json);
-                // console.log(body.name);
+// app.post('/api/upload', (req, res) => {
+//     upload(req, res, (err) => {
+//         if (err) {
+//             res.status(500).json({ message: err });
+//         } else {
+//             if (req.file == undefined) {
+//                 res.status(400).json({ message: 'No file selected!' });
+//             } else {
+//                 // let body = JSON.parse(req.body.json);
+//                 // console.log(body.name);
 
-                res.status(200).json({
-                    message: 'body',
-                    filename: req.file.filename,
-                });
-            }
-        }
-    });
-});
+//                 res.status(200).json({
+//                     message: 'body',
+//                     filename: req.file.filename,
+//                 });
+//             }
+//         }
+//     });
+// });
 //http://localhost:4000/api/image/imgname.png
 
 // GET route for retrieving an image by filename
