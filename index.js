@@ -6,14 +6,14 @@ const fs = require('fs');
 const MAstersRouter = require('./routes/Masters.route.js');
 const TatooRouter = require('./routes/Tatoos.route.js');
 const StyleRouter = require('./routes/Styles.route.js');
-
+const cors = require('cors');
 const port = process.env.PORT || 4000;
 const app = express();
 
 // Middleware for parsing JSON and URL-encoded data
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-
+app.use(cors());
 // Routers
 app.use('/api/tatoos', TatooRouter);
 app.use('/api/styles', StyleRouter);
