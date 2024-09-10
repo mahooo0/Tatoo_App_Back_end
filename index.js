@@ -15,6 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 // Routers
+app.get('/', (req, res) => res.send('Express on Vercel'));
 app.use('/api/tatoos', TatooRouter);
 app.use('/api/styles', StyleRouter);
 app.use('/api/masters', MAstersRouter);
